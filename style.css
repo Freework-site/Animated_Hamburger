@@ -1,0 +1,74 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #000;
+}
+.menu_btn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+.menu_btn_hamburger
+{
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+.menu_btn_hamburger::before,
+.menu_btn_hamburger::after
+{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+    background: #fff;
+}
+.menu_btn_hamburger::before
+{
+    transform: translateY(-16px);
+    transition: all .8s ease-in-out;
+}
+.menu_btn_hamburger::after
+{
+    transform: translateY(16px);
+    transition: all .8s ease-in-out;
+}
+
+/* Animation */
+
+.menu_btn.active .menu_btn_hamburger
+{
+    transform: rotate(-180deg);
+}
+
+.menu_btn.active .menu_btn_hamburger::before
+{
+    transform: rotate(45deg) translateY(-21px) translateX(8px);
+    width: 30px;
+    right: 10px;
+}
+.menu_btn.active .menu_btn_hamburger::after
+{
+    transform: rotate(-45deg) translateY(21px) translateX(8px);
+    width: 30px;
+    right: 10px;
+}
